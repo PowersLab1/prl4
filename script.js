@@ -510,10 +510,11 @@ const game = {
                     // Convert trials data to JSON string
                     const trialsDataJson = JSON.stringify(this.trials);
                     // Save the data in session storage
-                    sessionStorage.setItem('taskData', trialsDataJson);
+                    sessionStorage.setItem('PRL4taskData', trialsDataJson);
                     console.log('Saving to session storage:');
                     //send data as Message for labjswrapper to nab in event listener
-                    window.postMessage({ 
+                    window.postMessage({
+                        type: 'PRL4labjs.data', 
                         type: 'labjs.data',
                         json: trialsDataJson
                     }, '*');
